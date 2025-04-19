@@ -1,6 +1,5 @@
-! サンプル
-! ###id
-! ##.class
+! Title: MyFilter by Titan-np
+! Description: 自分用フィルタ
 
 
 ! 全サイト
