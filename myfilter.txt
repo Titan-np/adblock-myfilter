@@ -3,7 +3,7 @@
 
 
 ! 全サイト
-! - Googleでログイン
+! Googleでログイン
 iframe[title="[Googleでログイン]ダイアログ"]
 #credential_picker_container:has(>[src^="https://accounts.google.com"])
 
@@ -17,8 +17,6 @@ amazon.co.jp###nav-al-profile
 amazon.co.jp##div:has(> .s-suggestion-trending-container)
 ! 検索欄 > 再購入欄
 amazon.co.jp##div.right-pane-results-container:has(> * > .s-bia-suggestion)
-! 検索結果 > スポンサー
-amazon.co.jp##.s-flex-geom:has-text(スポンサー)
 ! 検索結果 > 最近閲覧した商品とおすすめ商品
 amazon.co.jp###rhf
 ! 検索結果 > プライム継続誘導
@@ -47,6 +45,7 @@ amazon.co.jp###px-profile_feature_div
 amazon.co.jp###brandSnapshot_feature_div
 ! 商品ページ内広告 > 類似商品と比較する
 amazon.co.jp##div[id^="HLCXComparisonWidget_"]
+amazon.co.jp##div:has(> div[id^="sims-comparisonContainer_feature_div_"])
 ! 商品ページ内広告 > 類似商品のビデオ
 amazon.co.jp###sims-consolidated-2_feature_div
 amazon.co.jp###similarities_feature_div:has(h3[aria-label="類似商品のビデオ"])
@@ -64,9 +63,7 @@ amazon.co.jp###HLCXComparisonWidget_feature_div
 amazon.co.jp###product-comparison_feature_div
 amazon.co.jp##div[id^="sims-simsContainer_feature_div_"]
 ! 商品ページ内広告 > スポンサー
-! #similarities_feature_div:has-text(スポンサー)
 amazon.co.jp###similarities_feature_div
-amazon.co.jp###discovery-and-inspiration_feature_div:has-text(スポンサー)
 amazon.co.jp##div[aria-label=" からのスポンサー付き広告."]
 ! 欲しい物リスト > リストに基づくおすすめ商品
 amazon.co.jp###recommendationWidget
@@ -125,8 +122,20 @@ amazon.co.jp##.fable-portal-container:has([role="dialog"] [id^="cross-benefit-"]
 amazon.co.jp##html.fable-no-scroll:style(overflow: auto !important; touch-action: auto !important; height: auto !important;)
 
 
-! Amebaブログ - 知らないブログへのリンク
+! Amebaブログ
+! 知らないブログへのリンク
 ameblo.jp##._1wfIP0Ec
+
+
+! Altema
+! 記事内PR
+altema.jp##div.pr-icon-box
+altema.jp##div.pr-icon-box + table
+! サイドバーの不要要素
+altema.jp##div#sidebar-41
+altema.jp##div#sidebar-12
+altema.jp##div#sidebar-35
+altema.jp##div#sidebar-42
 
 
 ! atwiki
@@ -191,7 +200,7 @@ gamerch.com##.jack
 ! Google
 ! トップページの誘導
 google.com,google.co.jp##div:has(iframe[name="callout"])
-! 検索ボックス - 最近の検索に関連
+! 検索ボックス > 最近の検索に関連
 !google.com,google.co.jp##ul[role="listbox"]:upward(1):has-text(最近の検索に関連)
 !google.com,google.co.jp##.rLrQHf:has-text(最近の検索に関連)
 google.com,google.co.jp##div[jsname="tovEib"][role="presentation"]
@@ -220,147 +229,155 @@ google.com,google.co.jp##div[data-isdtp]:has(g-dropdown-menu[jsname="GJUjXe"])
 
 
 ! Google Chat
-! - 自分のメッセージの右寄せをやめる
+! 自分のメッセージの右寄せをやめる
 !chat.google.com##.oGsu4, .Hj5Fxb, .kwI9i, YJxKBc, .yMXUbf:style(align-items: flex-start !important;)
 !chat.google.com##.rogmqd:style(align-self: flex-start !important;)
 !chat.google.com##.TImEwc .HPvfcf, .iKCcE, .B8q9Gf, .NGoCob:style(justify-content: flex-start !important;)
-!! - 自分のメッセージのホバーメニューの右寄せをやめる
+! 自分のメッセージのホバーメニューの右寄せをやめる
 !chat.google.com##.UgwGlb:style(flex-direction: unset !important;)
-!! - 自分のメッセージへのスタンプの左寄せをやめる
+! 自分のメッセージへのスタンプの左寄せをやめる
 !chat.google.com##.qdxBkb, .qdxBkb:hover:style(display: none;)
-!! - 自分のメッセージの名前に「自分」を追加
+! 自分のメッセージの名前に「自分」を追加
 !chat.google.com##.Pxe3Yd .yMXUbf > .NGoCob:style(padding-left: 12px !important;)
 !chat.google.com##.Pxe3Yd .yMXUbf > div> span::before:style(content: "自分"; font-size: .75rem; letter-spacing: .006rem;)
-!! - 自分のメッセージ(編集画面)の右寄せをやめる
+! 自分のメッセージ(編集画面)の右寄せをやめる
 !chat.google.com##.cVKqyc, .tGGH5c, .MLnaUe.CXBudf:style(align-items: flex-start !important;)
 !chat.google.com##.cVKqyc, .EFNTcf, .CfUpN:style(align-self: flex-start !important;)
-! - 連絡先の候補を削除
+! 連絡先の候補を削除
 chat.google.com##.teTAFe.XFzPX.dApTte
 
 
-! GMOあおぞらネット銀行 - AIチャット誘導
+! GMOあおぞらネット銀行
+! AIチャット誘導
 gmo-aozora.com##.techma-bot-btn,techma-bot-modal
 
 
-! GU - チャット誘導
+! GU
+! チャット誘導
 ||www.gu-global.com/jp/ja/iq/$subdocument
 
 
 ! はてなブログ
 blog.hatena.ne.jp###promotion
-! - antiblock.orgの回避
+! antiblock.orgの回避
 @@||hatenablog.com^*/header*.png#$image,~third-party
 @@||hatenablog.com^$generichide
 
 
-! HP - チャット
+! HP
+! チャット
 jp.ext.hp.com###inside_liveChatTab
 
 
-! 花王 - AIチャット
+! 花王
+! AIチャット
 www.kao.com###bedore-webagent-inner
 
 
-! クロネコヤマト - 役に立ったかアンケート
+! クロネコヤマト
+! 役に立ったかアンケート
 toi.kuronekoyamato.co.jp##div:has(iframe[src^="https://forms.office.com"])
 
 
-! lnk.to - Amazon Musicなどのモーダル
+! lnk.to
+! Amazon Musicなどのモーダル
 lnk.to###lnk-ad-header
 
 
-! マシュマロ - いきなりプレミアムの決済サービスへ移動させるやばいモーダル
+! マシュマロ
+! いきなりプレミアムの決済サービスへ移動させるやばいモーダル
 marshmallow-qa.com##.modal-body[data-premium-trigger-param="sending-message"]
 
 
-! モバイルSuicaFAQ - チャット誘導
+! モバイルSuicaFAQ
+! チャット誘導
 msfaq.mobilesuica.com###konnect-container
 
 
 ! Money Forward
-! - 総資産グラフのサンプル
+! 総資産グラフのサンプル
 moneyforward.com##.total-assets-sample
-! - サイドバー広告
+! サイドバー広告
 moneyforward.com##.mf-col-custom-ad
 
 
-! mora - バナー
+! mora
+! バナー
 mora.jp##.jack
 
 
-! Microsoft Office Specialist - FAQ
+! Microsoft Office Specialist
+! FAQ
 mos.odyssey-com.co.jp##.faq-box
 
 
-! 住信SBIネット銀行 - アプリ誘導
+! 住信SBIネット銀行
+! アプリ誘導
 www.netbk.co.jp##[src="/contents/assets/img/img_lazy.png"]
 
 
 ! ニコニコ動画
-! - マイページ
-!   - あなたへのおすすめ
+! マイページ > あなたへのおすすめ
 !www.nicovideo.jp###personalFrameArea
 !www.nicovideo.jp##.PersonalFrame-wrapper
 !www.nicovideo.jp##.RightSideContainer-personalFrame
 !www.nicovideo.jp##.RightSideContainer-formationFramer
-!   - イベント広告バナー
+! マイページ > イベント広告バナー
 www.nicovideo.jp##.RightSideContainer-editBannerFrame 
-!!   - フォローおすすめ
+! マイページ > フォローおすすめ
 !www.nicovideo.jp##.FollowRecommendation
 !www.nicovideo.jp##.FolloweeContainer-recommend
 !www.nicovideo.jp##.TimelineContainer-recommend
 www.nicovideo.jp##.RecommendUserContainer
-!!   - 一番上
+! マイページ > 一番上
 !www.nicovideo.jp##.WakutkoolNoticeContainer
-!!   - クリエイター支援
+! マイページ > クリエイター支援
 !www.nicovideo.jp##.RightSideContainer-formationFrame
-!! - 再生ページ
-!!   - フォロー誘導
+! 再生ページ > フォロー誘導
 !www.nicovideo.jp##.FollowAppeal
-!!   - プレミアム誘導
+! 再生ページ > プレミアム誘導
 !www.nicovideo.jp##.common-header-rg5t43
 !www.nicovideo.jp##.PremiumLink
-!!   - 動画再生画面の下
+! 再生ページ > 動画再生画面の下
 !www.nicovideo.jp##.BottomContainer-main
-!!   - ボタン1つでコメントするやつ
+! 再生ページ > ボタン1つでコメントするやつ
 !www.nicovideo.jp##.EasyCommentContainer
-!!   - ニュース欄
+! 再生ページ > ニュース欄
 !www.nicovideo.jp##.MarqueeContainer
-!!   - 時報
+! 再生ページ > 時報
 !nicovideo.cdn.nimg.jp/swf/player/marqueeplayer.swf?*
 !nicovideo.cdn.nimg.jp/*jiho*
-!!   - シークバープレビュー
+! 再生ページ > シークバープレビュー
 !www.nicovideo.jp##.SeekBarStoryboardPremiumLink
-!!   - ギフト欄
+! 再生ページ > ギフト欄
 !www.nicovideo.jp##.GiftSubEffectContainer
-!! - 生放送
-!!   - 画面クリックすると出るよくわからんやつ
+! 生放送 > 画面クリックすると出るよくわからんやつ
 !www.nicovideo.jp##button[id^="___cover-button"]
-!! - マイリストのgif
+! 生放送 > マイリストのgif
 !www.nicovideo.jp##p#hidariue
-!! - 検索画面のgif
+! 生放送 > 検索画面のgif
 !www.nicovideo.jp##.hidariue
-!! - プレミアム会員系の何か
+! 生放送 > プレミアム会員系の何か
 !www.nicovideo.jp##.PreVideoStartPremiumLinkContaine
-!! - 大百科
-!!   - 知らんニコ生が流れてるやつ
+! 大百科 > 知らんニコ生が流れてるやつ
 !dic.nicovideo.jp###dic_media_scrum_pc
 
 
-! Office TANAKA - 変な画像
+! Office TANAKA
+! 変な画像
 officetanaka.net##.col-md-4
 
 
 ! OneDrive
-! - 自分のファイル - おすすめ
+! 自分のファイル > おすすめ
 onedrive.com,onedrive.live.com##div[class^="msTilesCarousel_"]:upward(1)
 onedrive.com,onedrive.live.com##h2:has-text(あなたへのおすすめ):upward(1)
 onedrive.com,onedrive.live.com##h2:has-text(あなたへのおすすめ):upward(1) + div
 !onedrive.com,onedrive.live.com###fluent-default-layer-host
-! - 写真 - おすすめ
+! 写真 > おすすめ
 onedrive.com,onedrive.live.com##.all-photos-view .flex-row:has(> span:has-text(おすすめ))
 onedrive.com,onedrive.live.com##.all-photos-view .bolt-carousel
-! - 写真 - フィードバックの共有
+! 写真 > フィードバックの共有
 onedrive.com,onedrive.live.com##div[aria-label="フィードバックの共有"]
 
 
@@ -368,100 +385,109 @@ onedrive.com,onedrive.live.com##div[aria-label="フィードバックの共有"]
 p.eagate.573.jp###synalio-iframe
 
 
-! povo - チャット誘導
+! povo
+! チャット誘導
 povo.jp###bedore-webagent-inner
 
 
 ! Qiita
-! - アカウント登録誘導
+! アカウント登録誘導
 !qiita.com##.is-open.st-Modal
-! - イベントPR
+! イベントPR
 qiita.com##div[data-testid="popup-tech-play-event"]
 
 
-! QuizKnock - 記事内広告
+! QuizKnock
+! 記事内広告
 web.quizknock.com##.ad_below_article_title
 
 
-! Salesforce - プロモーション
+! Salesforce
+! プロモーション
 salesforce.com##.login-promo
 
 
-! 産経ニュース - オピニオンサイトリンク
+! 産経ニュース
+! オピニオンサイトリンク
 www.sankei.com##.column_bind
 
 
-! TSUTAYA - チャットボット
+! TSUTAYA
+! チャットボット
 ssl.help.tsite.jp##div[id^=aim__aim-widget-root_]
 
 
-! ツイキャス - 関連生放送
+! Todoist
+! ヘルプ誘導
+app.todoist.com##.popper.uA0aCFZ.tooltip
+
+
+! ツイキャス
+! 関連生放送
 twitcasting.tv###relatedlivebox
 
 
 ! Twitch
-! - ユーザーページでの自動再生 -> chrome://settings/content から www.twitch.tv の動画の自動再生をブロック
-! - ヘッダーのPrimeバッヂ
+! ユーザーページでの自動再生 -> chrome://settings/content から www.twitch.tv の動画の自動再生をブロック
+! ヘッダーのPrimeバッヂ
 twitch.tv##.top-nav__prime
-! - おすすめのチャンネル
+! おすすめのチャンネル
 twitch.tv##div[aria-label="おすすめのチャンネル"]
 twitch.tv##div[aria-label$="さんの視聴者が視聴"]
 twitch.tv##.find-me
-! - 人気のクリップ
+! 人気のクリップ
 twitch.tv##.tw-animation > .giKQhB
-! - サブスク誘導
+! サブスク誘導
 twitch.tv##.subtember-gradient
 twitch.tv##.channel-info-content article.Layout-sc-1xcs6mc-0.kNyuUv
 twitch.tv##section[id="offline-channel-main-content"] article:has(a[href^="/recaps/"])
-! - Turbo誘導
+! Turbo誘導
 twitch.tv##.subtember-gradient
 twitch.tv##.reward-center-body > .Layout-sc-1xcs6mc-0:has(a[href="https://www.twitch.tv/bits"])
 
 
 ! Twitter
-! 参考：https://hachima25.hatenablog.com/entry/2022/12/30/170527
-! - Firefoxで全ツイートに「さらに表示」が表示されるバグを直す
+! Firefoxで全ツイートに「さらに表示」が表示されるバグを直す
 x.com##main div > span:style(line-height: normal !important;)
-! - ハッシュタグのフォントだけ異なるバグを直す
+! ハッシュタグのフォントだけ異なるバグを直す
 !x.com##main a[href^="/hashtag"]:style(font-family: "Meiryo" !important;)
 x.com##div[data-testid="tweetText"],div[data-testid="UserDescription"] span:style(font-family: "Meiryo" !important;)
-! - ホームが空な時の表示
+! ホームが空な時の表示
 !twitter.com##div[data-testid="emptyState"]
-! - URLの最初と最後が小さくなるキモい表示を戻す
-! - 他サイトへのツイート埋め込みはtwitter.comが、Twitter本体へはx.comが適用されているっぽい
+! URLの最初と最後が小さくなるキモい表示を戻す
+! 他サイトへのツイート埋め込みはtwitter.comが、Twitter本体へはx.comが適用されているっぽい
 !twitter.com##a[dir="ltr"] > span:style(font-size:15px !important;)
 !twitter.com##span[dir="ltr"] > span:style(font-size:15px !important;)
 !x.com##div[aria-label="タイムライン: ホームタイムライン"] a[dir="ltr"] > span:style(font-size:15px !important;)
 !x.com##div[aria-label="タイムライン: ホームタイムライン"] span[dir="ltr"] > span:style(font-size:15px !important;)
 !x.com##div[aria-label="タイムライン: 会話"] a[dir="ltr"] > span:style(font-size:15px !important;)
 !x.com##div[aria-label="タイムライン: 会話"] span[dir="ltr"] > span:style(font-size:15px !important;)
-! - プレミアム勧誘
+! プレミアム勧誘
 !x.com##div[aria-label="タイムライン: ホームタイムライン"] div[data-testid="cellInnerDiv"]:has(img[src^="https://ton.twimg.com/onboarding/subscriptions"])
 !x.com##div[aria-label="タイムライン: ホームタイムライン"] div[data-testid="cellInnerDiv"]:has(a[href^="/i/premium_sign_up"])
 !x.com##div[aria-label="タイムライン: ホームタイムライン"] div[data-testid="cellInnerDiv"] h1:has-text(TweetDeckはX Proになりました)
 !x.com##div[data-testid="TopNavBar"] a[href^="/i/premium_sign_up"]:upward(1)
-!! - 寄付ボタン(?)
+!! 寄付ボタン(?)
 !x.com###donate-button
-! - ホーム画面でのおすすめユーザ・おすすめトピック
+! ホーム画面でのおすすめユーザ・おすすめトピック
 x.com##div[data-testid="sidebarColumn"]
 !x.com##div[aria-label="タイムライン: ホームタイムライン"] div[data-testid="cellInnerDiv"] div[data-testid="UserCell"]
 !x.com##div[aria-label="タイムライン: ホームタイムライン"] div[data-testid="cellInnerDiv"] a[href="https://pro.x.com"]
-!! - フォロー中のユーザーが固定
+!! フォロー中のユーザーが固定
 !x.com##div[aria-label="タイムライン: ホームタイムライン"] [data-testid="cellInnerDiv"]:has(a[href="/i/topics/pinned"])
 !x.com##div[aria-label="タイムライン: ホームタイムライン"] [data-testid="cellInnerDiv"]:has(a[href="/i/topics/pinned"]) + [data-testid="cellInnerDiv"]:has(div[aria-label="タイムライン: Carousel"])
-!! - アナリティクスリンク
+!! アナリティクスリンク
 !x.com##div:has( > a[aria-label$="アナリティクスを表示"])
-!! - スペース
+!! スペース
 !!twitter.com##div[aria-label^="スペース、"]:upward(2)
 !!twitter.com##div[role="presentation"]:has( > * > div[aria-label^="スペース"])
 !!twitter.com##div.css-175oi2r:has( > * > div[role="grid"] > * > nav[aria-live="polite"]:has(div[data-testid="ScrollSnap-SwipeableList"]:has(> * > * > * > div[aria-label^="スペース"])))
 !!twitter.com##header[role="banner"]
 !!twitter.com##div[data-testid="ScrollSnap-SwipeableList"]:has(> * > * > * > div[aria-label^="スペース"])
 !!twitter.com##div[data-testid="ScrollSnap-SwipeableList"]:has(> * > * > * > div[aria-label^="スペース"]) + div[data-testid="ScrollSnap-nextButtonWrapper"]
-! - プロフィール
-!   - ユーザーをフォローしている別のフォロワー一覧
+! プロフィール > ユーザーをフォローしている別のフォロワー一覧
 x.com##a[aria-label="知り合いのフォロワー"]
-!!   - おすすめユーザー・トピックのタイトル
+! プロフィール > おすすめユーザー・トピックのタイトル
 !x.com##div[data-testid="cellInnerDiv"]:has-text(おすすめユーザー)
 !x.com##div[aria-label$="さんのツイート"] div[data-testid="cellInnerDiv"] div[data-testid="UserCell"]
 !x.com##div[aria-label$="さんのツイート"] div[data-testid="cellInnerDiv"] a[href^="/i/connect_people?user_id="]
@@ -472,143 +498,134 @@ x.com##a[aria-label="知り合いのフォロワー"]
 !x.com##div[data-testid="cellInnerDiv"]:has-text(おすすめトピック)
 !!x.com##div[aria-label="ホームタイムライン"] div[data-testid="cellInnerDiv"] section[aria-labelledby^="accessible-list-"]
 !!x.com##div[aria-label="ホームタイムライン"] div[data-testid="cellInnerDiv"] a[href="/i/topics/picker/home"]
-!!   - プレミアム誘導
+! プロフィール > プレミアム誘導
 x.com##div[aria-label="ホームタイムライン"] div.r-8dgmk1:has(a[href="/i/premium_sign_up"])
 x.com##div[aria-label="ホームタイムライン"] div.r-1xpp3t0
-!!   - アナリティクス誘導
+! プロフィール > アナリティクス誘導
 !x.com##div[aria-label="ホームタイムライン"] div[data-testid="analytics-preview"]
-!! - 通知ページ
-!!   - プッシュ通知誘導
+! 通知ページ > プッシュ通知誘導
 !x.com##div[aria-label="タイムライン: 通知"] div[role="button"]:has-text(通知をオンにする)
-!!   - 謎の記念日
+! 通知ページ > 謎の記念日
 !x.com##div[aria-label="タイムライン: 通知"] article:has-text(X記念日)
-!! - リストページ
-!!   - おすすめリスト
+! リストページ > おすすめリスト
 !x.com##div[aria-label="タイムライン: 自分のリスト"] h2 > div[style^=-webkit] > span:has-text(新しいリストを見つける):upward(div[style^="transform"])
 !x.com##div[aria-label="タイムライン: 自分のリスト"] div[role="button"][aria-describedby]:upward(div[data-testid="cellInnerDiv"])
 !x.com##div[aria-label="タイムライン: 自分のリスト"] button[aria-describedby]:upward(div[data-testid="cellInnerDiv"])
 !x.com##div[aria-label="タイムライン: 自分のリスト"] a[href="/i/lists/suggested"]
 !x.com##div[aria-label="タイムライン: 自分のリスト"] a[href="/i/lists/suggested"]:upward(div[style^="transform"]) + div + div
-! - ツイートページ
-!   - ポストアナリティクスに移動 
+! ツイートページ > ポストアナリティクスに移動 
 x.com##div[aria-label="タイムライン: 会話"] div.css-175oi2r.r-1ifxtd0:has(a[href="/i/account_analytics"])
-!   - スパムツイート
+! ツイートページ > スパムツイート
 x.com##div[aria-label="タイムライン: 会話"] div.css-175oi2r:has-text(万円稼)
 x.com##div[aria-label="タイムライン: 会話"] div.css-175oi2r:has-text(万円の利益)
-!!   - その他のツイート
+! ツイートページ > その他のツイート
 !x.com##div[aria-label="タイムライン: 会話"] div[data-testid="cellInnerDiv"]:has-text(その他のツイート)
 !x.com##div[aria-label="タイムライン: 会話"] div[data-testid="cellInnerDiv"]:has-text(その他のツイート) ~ div[data-testid="cellInnerDiv"]
 x.com##div[aria-label="タイムライン: 会話"] div[data-testid="cellInnerDiv"]:has-text(もっと見つける)
 x.com##div[aria-label="タイムライン: 会話"] div[data-testid="cellInnerDiv"]:has-text(もっと見つける) ~ div[data-testid="cellInnerDiv"]
-!! - 検索
-!!   - おすすめユーザー
+! 検索 > おすすめユーザー
 !x.com##div[aria-label="タイムライン: タイムラインを検索"] div[data-testid="cellInnerDiv"]:has(h2:has-text(ユーザー))
 !x.com##div[aria-label="タイムライン: タイムラインを検索"] div[data-testid="cellInnerDiv"]:has(button[aria-label^="フォロー"])
-!!   - コミュニティを探す
+! 検索 > コミュニティを探す
 !x.com##div[aria-label="タイムライン: タイムラインを検索"] div[data-testid="cellInnerDiv"]:has(h2:has-text(コミュニティを探す))
 !x.com##div[aria-label="タイムライン: タイムラインを検索"] div[data-testid="cellInnerDiv"]:has(div[aria-label="タイムライン: Carousel"])
 !x.com##div[aria-label="タイムライン: タイムラインを検索"] div[data-testid="cellInnerDiv"]:has(a[href="/i/communities/suggested"])
 !x.com##div[aria-label="タイムライン: タイムラインを検索"] div[data-testid="cellInnerDiv"]:has(a[href="/i/communities/suggested"]) + div[data-testid="cellInnerDiv"]
-!!   - 検索内容に関連しているかアンケート
+! 検索 > 検索内容に関連しているかアンケート
 !x.com##div[aria-label="タイムライン: タイムラインを検索"] div[data-testid="cellInnerDiv"]:has(span:has-text(このポストは検索内容に関連していますか？))
 
 
 ! UNIQLO
-! - チャット誘導
+! チャット誘導
 ||www.uniqlo.com/jp/ja/iq/$subdocument
-! - 商品ページの動画
+! 商品ページの動画
 ||uniqlo.com/$mp4
 
 
-! Weblio辞書 - PR動画
+! Weblio辞書
+! PR動画
 ejje.weblio.jp##.gliaplayer-container
 
 
-! WikiWiki - 広告スペース
+! WikiWiki
+! 広告スペース
 wikiwiki.jp##.pc-caption-ad-default.default-advertisement
 
 
 ! Wikipedia
-! - 寄付誘導
+! 寄付誘導
 ja.wikipedia.org###siteNotice
 ja.wikipedia.org##.cn-fundraising
 
 
 ! Yahoo!乗換案内
-! - サイドバー
+! サイドバー
 transit.yahoo.co.jp###sub
-! - ヘッダー
+! ヘッダー
 transit.yahoo.co.jp###mhHeadLine
 
 
-! ヨドバシ.com - ジャンル別ページのお客様へのおすすめ
+! ヨドバシ.com
+! ジャンル別ページのお客様へのおすすめ
 www.yodobashi.com##.cmr-carousel
 ! ご注文の完了 > あわせて買いたい
 www.yodobashi.com###dpu1000
 
 
 ! YouTube
-! - スパムコメント
+! スパムコメント
 !www.youtube.com##yt-live-chat-text-message-renderer:has-text(<ユーザ名>)
-! - ホーム
-!   - 1行の動画数を変更
+! ホーム > 1行の動画数を変更
 www.youtube.com###contents:style(--ytd-rich-grid-items-per-row: 6 !important;)
-!   - ショート棚
+! ホーム > ショート棚
 www.youtube.com##ytd-rich-shelf-renderer
-!   - おすすめチャンネル
+! ホーム > おすすめチャンネル
 www.youtube.com###content.ytd-rich-section-renderer
-!   - ミックスリスト
+! ホーム > ミックスリスト
 www.youtube.com##ytd-rich-item-renderer:has(a[href*="&start_radio=1"])
-!   - メンバー限定動画
+! ホーム > メンバー限定動画
 www.youtube.com##ytd-rich-item-renderer:has(div.badge-style-type-members-only)
-!   - YouTubeからのアンケート(本日のおすすめ動画はいかがでしたか？)
+! ホーム > YouTubeからのアンケート(本日のおすすめ動画はいかがでしたか？)
 www.youtube.com##tp-yt-paper-dialog:has(> ytd-single-option-survey-renderer)
-! - 再生画面
-!   - 一時停止中の他の動画
+! 再生画面 > 一時停止中の他の動画
 !www.youtube.com##.ytp-pause-overlay:has(> button[aria-label="他の動画を隠します"])
-!   - 動画終了後の関連動画
+! 再生画面 > 動画終了後の関連動画
 www.youtube.com##.videowall-endscreen
-! - 関連動画
-!   - ショート動画
+! 関連動画 > ショート動画
 www.youtube.com###related ytd-reel-shelf-renderer:has(a[href^="/shorts/"])
-!   - 再生数2桁以下
+! 関連動画 > 再生数3桁以下
 www.youtube.com###related ytd-compact-video-renderer:has(span:has-text(/[0-9] 回視聴/):not(:has-text(/[0-9]{4} 回視聴/)))
 www.youtube.com###related ytd-compact-video-renderer:has(span:has-text(/[0-9] 人が視聴中/):not(:has-text(/[0-9]{4} 人が視聴中/)))
 www.youtube.com###related yt-lockup-view-model:has(span:has-text(/[0-9] 回視聴/):not(:has-text(/[0-9]{4} 回視聴/)))
 www.youtube.com###related yt-lockup-view-model:has(span:has-text(/[0-9] 人が視聴中/):not(:has-text(/[0-9]{4} 人が視聴中/)))
-!   - オートダビング版
+! 関連動画 > オートダビング版
 www.youtube.com###related ytd-compact-video-renderer:has(path[d="M11.72 11.928A4.004 4.004 0 0015 7.998c0-2.21-1.79-4-4-4s-4 1.79-4 4c0 1.96 1.42 3.59 3.28 3.93-5.51.28-8.28 3.83-8.28 8.07L20 20c0-4.24-2.77-7.79-8.28-8.07Z"])
-!   - ミックスリスト
+! 関連動画 > ミックスリスト
 www.youtube.com###related ytd-compact-radio-renderer
-! - サイドバー - ショート欄
+! サイドバー > ショート欄
 www.youtube.com##a[title="ショート"]
-! - 検索結果
-!   - 他の人はこちらも視聴しています・あなたへのおすすめ
+! 検索結果 > 他の人はこちらも視聴しています・あなたへのおすすめ
 www.youtube.com##.style-scope ytd-search .style-scope.ytd-shelf-renderer, .ytd-horizontal-card-list-renderer
-!   - スポンサー動画
+! 検索結果 > スポンサー動画
 www.youtube.com###container.ytd-search div.ytd-ad-slot-renderer
-!   - 検索結果のショート棚
+! 検索結果 > ショート棚
 www.youtube.com##ytd-reel-shelf-renderer
 !www.youtube.com##ytd-video-renderer[use-search-ui]:has(a#thumbnail[href^="/shorts/"])
-! - チャンネルページ
-!   - おすすめ
+! チャンネルページ > おすすめ
 www.youtube.com##.ytd-browse[page-subtype="channels"] #contents.ytd-item-section-renderer:has(.grid-subheader > #title-container > h2 > span#title:has-text(おすすめ))
-!   - チャンネルメンバー一覧
+! チャンネルページ > チャンネルメンバー一覧
 www.youtube.com##.ytd-browse[page-subtype="channels"] #contents.ytd-item-section-renderer:has(button[aria-label="このチャンネルのメンバーになります"])
-! - 再生リスト
-!   - おすすめの動画
+! 再生リスト > おすすめの動画
 www.youtube.com##ytd-item-section-header-renderer[title-style="ITEM_SECTION_HEADER_TITLE_STYLE_PLAYLIST_RECOMMENDATIONS"]:upward(2)
-!   - おすすめのプレイリスト
+! 再生リスト > おすすめのプレイリスト
 www.youtube.com##.ytd-browse[page-subtype="playlist"] .ytd-item-section-renderer:has(h2 > span#title:has-text(おすすめ))
-! - ライブ
-!   - 絵文字リアクション
+! ライブ > 絵文字リアクション
 !www.youtube.com###reaction-control-panel-overlay
 !www.youtube.com###fab-container
-! - YouTube拡張機能
-!   - PocketTube専用ページのリンク(課金を要求されるため)
+! YouTube拡張機能 > PocketTube専用ページのリンク(課金を要求されるため)
 www.youtube.com##a[title="Deck"]
 www.youtube.com##.isa_info
-! - Studioページ
-!   - アンケート
+! Studioページ > アンケート
 youtube.com###google-hats-survey
+! Studioページ > 高評価率
 studio.youtube.com##.likes-container
